@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homenagem ao Pai</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      text-align: center;
+    }
+    .container {
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    img {
+      max-width: 90%;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+    audio {
+      margin-top: 20px;
+    }
+    #qrcode {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Feliz Dia dos Pais!</h1>
+    <img src="pai.jpg" alt="Foto com o pai">
+    <p>Uma homenagem especial com carinho.</p>
+
+    <audio controls autoplay loop>
+      <source src="musica.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio.
+    </audio>
+
+    <div id="qrcode"></div>
+    <p>Escaneie o QR Code para compartilhar</p>
+  </div>
+
+  <!-- QR Code Script -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <script>
+    // Altere para o link do site quando hospedado
+    const url = "https://seusite.com";
+    QRCode.toCanvas(document.getElementById('qrcode'), url, { width: 150 }, function (error) {
+      if (error) console.error(error);
+    });
+  </script>
+</body>
+</html>
